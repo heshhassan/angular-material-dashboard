@@ -1,0 +1,8 @@
+module.exports = {
+  "SF_LOGIN_URI": "",
+  "SF_REDIRECT_URI": "",
+  "SF_CLIENT_ID": "",
+  "SF_CLIENT_SECRET": "",
+  "SF_USERNAME": "",
+  "SF_PASSWORD": ""
+};

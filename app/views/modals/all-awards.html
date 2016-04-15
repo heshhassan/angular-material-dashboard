@@ -1,0 +1,56 @@
+<md-dialog aria-label="Mango (Fruit)"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>All Awards</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
+      <div class="md-dialog-content">
+        <md-list-item >
+          <img src="images/icons/edit.png" alt=""><p>award 1 due 12/15/15</p>
+          <md-button class="assign-btn" ng-click="assign($event)">Assign</md-button>
+          <md-divider md-inset ng-if="!$last"></md-divider>
+        </md-list-item>
+        <md-list-item >
+          <img src="images/icons/edit.png" alt=""><p>award 2 due 12/15/15</p>
+          <md-button class="assign-btn" ng-click="assign($event)">Assign</md-button>
+          <md-divider md-inset ng-if="!$last"></md-divider>
+        </md-list-item>
+        <md-list-item >
+          <img src="images/icons/edit.png" alt=""><p>award 3 due 12/15/15</p>
+          <md-button class="assign-btn" ng-click="assign($event)">Assign</md-button>
+          <md-divider md-inset ng-if="!$last"></md-divider>
+        </md-list-item>
+        <md-list-item >
+          <img src="images/icons/edit.png" alt=""><p>award 4 due 12/15/15</p>
+          <md-button class="assign-btn" ng-click="assign($event)">Assign</md-button>
+          <md-divider md-inset ng-if="!$last"></md-divider>
+        </md-list-item>
+        <md-list-item >
+          <img src="images/icons/edit.png" alt=""><p>award 5 due 12/15/15</p>
+          <md-button class="assign-btn" ng-click="assign($event)">Assign</md-button>
+          <md-divider md-inset ng-if="!$last"></md-divider>
+        </md-list-item>
+        <md-list-item >
+          <img src="images/icons/edit.png" alt=""><p>award 6 due 12/15/15</p>
+          <md-button class="assign-btn" ng-click="assign($event)">Assign</md-button>
+          <md-divider md-inset ng-if="!$last"></md-divider>
+        </md-list-item>
+      </div>
+    </md-dialog-content>
+    <div class="md-actions" layout="row">
+
+      <md-button class="md-raised md-warn" ng-click="answer('useful')" style="margin-right:20px;" >
+        Assign
+      </md-button>
+      <md-button md-no-ink ng-click="answer('not useful')" >
+        Cancel
+      </md-button>
+    </div>
+  </form>
+</md-dialog>

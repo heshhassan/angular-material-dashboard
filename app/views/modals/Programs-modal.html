@@ -1,0 +1,40 @@
+<md-dialog aria-label="" class="program-modal"  ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Approval requests - Programs</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content >
+      <div class="md-dialog-content" ng-controller="ApprovalCtrl">
+    		<div class=" pdf-wrapper" layout="row" layout-wrap layout-align="start start">
+    			<div class="img-review" ng-repeat="program in programs" flex>
+    				<!-- <img src="{{program.url}}" alt="{{program.name}}"> -->
+            <object data="files/program.pdf" type="application/pdf" width="100%" height="100%">
+              <p>Alternative text - include a link <a href="files/program.pdf">to the PDF!</a></p>
+            </object>
+    			</div>
+        </div>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>
+<!-- <div flex="shrink">
+	<md-list-item class="md-3-line md-long-text">
+    <img  src="images/user.jpg" class="md-avatar"  alt="">
+    <div class="md-list-item-text" >
+      <h3>Hesham Khaled</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa quam.
+      </p>
+			<md-input-container class="md-block">
+        <label>Comment...</label>
+        <textarea  ng-required="true" ng-model="user.biography" md-maxlength="90" rows="2" md-select-on-focus></textarea>
+      </md-input-container>
+    </div>
+  </md-list-item>
+</div> -->

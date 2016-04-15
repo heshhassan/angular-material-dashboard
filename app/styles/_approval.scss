@@ -1,0 +1,34 @@
+.approval-num{
+	font-size: 50px;
+	margin: 0;
+	color: $primary-blue;
+}
+.approval-title{
+	font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+	color: $primary-blue;
+}
+.logo-card{
+	md-list-item{
+		padding: 0;
+	}
+	.img-review{
+		padding: 10px;
+		img{
+			width: 100%;
+		}
+	}
+}
+.program-modal{
+	max-height:95% ;
+	height: 95%;
+	width: 90%;
+	max-width: 75%;
+	.md-dialog-content{
+		padding: 5px;
+	}
+	.pdf-wrapper, .pdf-wrapper > div {
+		height: 83vh;
+	}
+}

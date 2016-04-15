@@ -1,0 +1,57 @@
+<section class="login">
+   <md-content layout="row" layout-wrap layout-align="center start" layout-xs="column"layout-padding="" ng-controller="LoginCtrl as login">
+    <div flex="75"  layout="column">
+      <md-card>
+        <md-card-content>
+          <div class="login-header"></div>
+          <form name="login" ng-hide="registered">
+            <md-input-container class=" md-block">
+              <label>Enter your email...</label>
+              <input name="name" type="text" required>
+            </md-input-container>
+            <md-input-container class=" md-block">
+              <label>Enter your password...</label>
+              <input name="password" type="password" required>
+            </md-input-container>
+            <div class="md-actions" layout="column" layout-wrap layout-align="center center">
+              <md-button class="md-raised md-warn" ng-click="loginState()">
+                <a href="" >Login</a>
+              </md-button>
+              <p> New user? <a href="" ng-click="registered=true; logged= false;">Register</a></p>
+            </div>
+          </form>
+          <form name="register" ng-show="registered">
+            <md-input-container class=" md-block">
+              <label>Enter your email...</label>
+              <input name="name" type="text" required>
+            </md-input-container>
+            <md-input-container class=" md-block">
+              <label>Enter new password...</label>
+              <input name="password" type="password" required>
+            </md-input-container>
+            <md-input-container>
+              <md-select ng-model="login.userState" placeholder="Choose your role...">
+                <md-option ng-repeat="state in login.states" value="{{state.abbrev}}">
+                  {{state.abbrev}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+            <md-input-container >
+              <div class="profile-photo-uploader">
+                <input type="file" ng-model="file" onchange="angular.element(this).scope().displayPhotoName(this.files)" >
+                <a class="profile-photo-btn" for="uploadLogo"></a>
+                <p>{{photoName}}</p>
+              </div>
+            </md-input-container>
+            <div class="md-actions" layout="column" layout-wrap layout-align="center center">
+              <md-button class="md-raised md-warn" ng-click="registerState()">
+                <a href="">Register</a>
+              </md-button>
+              <p> Already registered? <a href="" ng-click="registered=false; logged= true;">Login</a></p>
+            </div>
+          </form>
+        </md-card-content>  
+      </md-card>
+    </div>
+  </md-content>
+</section>

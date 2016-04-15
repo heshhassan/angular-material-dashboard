@@ -1,0 +1,31 @@
+<section layout="row" >
+  <md-content flex="" layout-padding="" ng-controller="ExtrasCtrl">
+    <md-content class="" layout="row" layout-wrap layout-align="center start" layout-xs="column">
+        <div flex="30" flex-sm="100" flex-xs="100" layout="column" ng-repeat="app in extras">
+          <md-card class="custom-card" >
+            <md-card-title layout="row">
+              <md-card-title-text flex layout-align="center center">
+                <md-button class="title-card-circle md-fab md-hue-2" aria-label="Profile">
+                    <img src={{app.photo}} alt="">
+                </md-button>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <div class="md-actions" layout="column" layout-align="center center" >
+                	<h2 class="approval-num">{{app.number}}</h2>
+                	<h4 class="approval-title">{{app.name}}</h4>
+                  <md-button class="md-raised md-warn" ng-click="modalExtra($index)">View</md-button>
+                	
+              </div>
+            </md-card-content>  
+          </md-card>
+        </div>
+    </md-content>
+    <div layout="column" layout-fill="" layout-align="top center">
+      <div layout="row">
+      </div>
+    </div>
+    <div flex=""></div>
+  </md-content>
+</section>
+

@@ -1,0 +1,54 @@
+
+md-toolbar.header{
+	background-color: transparent;
+	border-width: 0 0 1px;
+	border-style: solid;
+	border-color: rgba(0, 0, 0, 0.15);
+
+	.sponsor-wrapper{
+		border-left: 1px solid $gray;
+		margin-left: 10px;
+	    padding-left: 10px;
+		img{
+			float: left;
+			width: 50px;
+		}
+		.sponsor-name{
+			color: $gray;
+			margin: 15px 0 0 9px;
+		    display: inline-block;
+		    font-size: 16px;
+		    font-weight: bold;
+
+		}
+	}
+	.md-toolbar-tools{
+		background-color: #fff;
+	}
+	.md-menu{
+		// position: absolute !important;
+	}
+	.user-name{
+		color: $black-text;
+		margin: 0;
+		font-weight: normal;
+	}
+	.md-avatar{
+		// margin: 0 8px 0 0;
+	}
+	md-list{
+		padding: 0;
+	}
+	.md-icon-button {
+		color: $black-text !important;
+	}
+	.notification-num{
+		background-color: orange;
+	    color: white;
+	    padding: 1px 7px;
+	    border-radius: 44%;
+	    position: relative;
+	    top: -5px;
+	    left: 16px;
+	}
+}

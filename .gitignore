@@ -1,0 +1,11 @@
+node_modules/
+app/bower_components
+.sass-cache
+bower_components/
+app/styles/*.map
+app/styles/*.css
+.idea/
+
+grunt.log
+
+config/app.js

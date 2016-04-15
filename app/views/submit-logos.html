@@ -1,0 +1,37 @@
+<section layout="row">
+	<md-content layout="row" layout-wrap layout-align="center start" layout-xs="column" ng-controller="submitLogosCtrl">
+		<md-card flex="95" >
+			<md-toolbar class="user-table-header">
+			    <div class="md-toolbar-tools">
+			      <h2 class="md-flex">Logos</h2>
+			    </div>
+		  	</md-toolbar>
+			<md-card-content>
+				<div layout="row" layout-wrap layout-align="start center">
+					<div class="logo-card text-center" flex="20" ng-repeat="logo in logos">
+						<div class="img-wrap">
+							<img src="{{logo.url}}" alt="{{logo.name}}">
+							<div class="edit-logo" layout="row" layout-align="center center">
+								<md-button class="md-icon-button delete-btn" aria-label="Favorite">
+					         <md-icon md-menu-origin ng-click="viewLogo(logo,$index)" class="md-icon-button">{{'remove_red_eye'}}</md-icon></md-button>
+					         <md-button  class="md-icon-button">
+					         	<md-icon md-menu-origin   ng-click="deleteLogo(logo, $index);">{{'delete'}}</md-icon>
+				      		 </md-button>
+							</div>
+						</div>
+						<h4 class="logo-name">{{logo.name}}</h4>
+					</div>
+					<div class="logo-card upload-logo">
+						<div class="uploader">
+							<input type="file" id="uploadLogo" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'">
+							<md-button class="upload-file-btn" for="uploadLogo">+</md-button>
+						</div>
+						<md-button ng-show="file" class="md-raised md-warn" ng-click="uploadLogo(file)">upload</md-button>
+						<h4 class="logo-name">{{logo.name}}</h4>
+						
+					</div>
+				</div>
+			</md-card-content>
+		</md-card>
+	</md-content>
+</section>

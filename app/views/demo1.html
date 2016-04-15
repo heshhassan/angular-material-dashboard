@@ -1,0 +1,61 @@
+<div ng-controller="Awards">
+  <section ng-repeat="award_type in awards" layout="row">
+    <md-content flex="" layout-padding="">
+      <div layout="row">
+        <div flex="33" class="title-icon">
+          <img src="images/icons/cup.png" alt="">
+
+          <h3> {{award_type.name}}</h3>
+        </div>
+      </div>
+      <div class="" layout="row" layout-wrap layout-align="left start" layout-xs="column">
+        <div ng-repeat="style in award_type.style_list" flex="33" flex-sm="100" flex-xs="100" layout="column">
+          <md-card class="custom-card">
+            <md-card-title>
+              <md-card-title-text>
+                <md-button class="title-card-circle md-fab md-hue-2" aria-label="Profile">
+                  <span>{{style}}</span>
+                </md-button>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <md-list-item>
+                <img src="images/icons/edit.png" alt="">
+
+                <p>award 1 due 12/15/15</p>
+                <md-button class="assign-btn" ng-click="showAdvanced($event)">Assign</md-button>
+                <md-divider md-inset ng-if="!$last"></md-divider>
+              </md-list-item>
+              <md-list-item>
+                <img src="images/icons/edit.png" alt="">
+
+                <p>award 1 due 12/15/15</p>
+                <md-button class="assign-btn" ng-click="">Assign</md-button>
+                <md-divider md-inset ng-if="!$last"></md-divider>
+              </md-list-item>
+
+              <div class="md-actions" layout="row" layout-wrap>
+                <span class="remaining-num" flex="none" layout-align="start center">8</span>
+
+                <p layout-align="start center" flex="none">awards remaining</p>
+
+                <div layout-align="end center" flex layout="row" layout-align="end center">
+
+                  <md-button class="md-raised md-warn" ng-click="viewAll($event)">View all</md-button>
+                </div>
+              </div>
+            </md-card-content>
+          </md-card>
+        </div>
+
+      </div>
+      <div layout="column" layout-fill="" layout-align="top center">
+        <div layout="row">
+        </div>
+      </div>
+      <div flex=""></div>
+    </md-content>
+
+
+  </section>
+</div>

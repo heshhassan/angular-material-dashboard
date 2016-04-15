@@ -1,0 +1,48 @@
+<md-dialog aria-label=""  ng-cloak>
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Approval requests - Postcards</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-height:810px; ">
+    <div class="md-dialog-content" ng-controller="ApprovalCtrl">
+    	<div  ng-repeat="postcard in postcards">
+    		<div class="logo-card gray-border" layout="row" layout-wrap layout-align="start start">
+    			<div class="img-review" flex="40">
+    				<img src="{{postcard.url}}" alt="{{postcard.name}}">
+    			</div>
+    			<div flex="shrink">
+	  				<md-list-item class="md-3-line md-long-text">
+			        <img  src="images/user.jpg" class="md-avatar"  alt="">
+			        <div class="md-list-item-text" >
+			          <h3>Hesham Khaled</h3>
+			          <p>
+			            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa quam.
+			          </p>
+								<md-input-container class="md-block">
+				          <label>Comment...</label>
+				          <textarea ng-model="user.biography" md-maxlength="90" rows="2" md-select-on-focus></textarea>
+				        </md-input-container>
+			        </div>
+			      </md-list-item>
+    			</div>
+	    	</div>
+    	</div>
+    </div>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    
+    <md-button class="md-raised md-warn" ng-click="answer('useful')" style="margin-right:20px;" >
+      Assign
+    </md-button>
+    <md-button md-no-ink ng-click="answer('not useful')" >
+     Cancel
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

@@ -1,0 +1,55 @@
+<md-dialog aria-label="Mango (Fruit)"  ng-cloak flex="40">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>New User</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
+      <div class="md-dialog-content">
+          <md-content>
+            <form name="form.userForm">
+            <md-input-container class=" md-block">
+              <label>Name</label>
+              <input name="name" ng-model="user.name" type="text" required>
+              <div ng-messages="form.userForm.name.$error" ng-if='form.userForm.name.$dirty'>
+                <div ng-message="required">This is required!</div>
+              </div>
+            </md-input-container>
+            <md-input-container class=" md-block">
+              <label>Email</label>
+              <input ng-model="user.email" name="email" type="email" required ng-pattern="/^.+@.+\..+$/">
+              <div ng-messages="form.userForm.email.$error" ng-if='form.userForm.email.$dirty'>
+                <div ng-message="required">This is required!</div>
+                <div ng-message="pattern">Invalid Email!</div>
+              </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>Role</label>
+              <md-select ng-model="user.role" name="role" required>
+                <md-option ng-repeat="role in roles" value="{{role}}">{{role}}</md-option>
+              </md-select>
+              <div class="errors" ng-messages="form.userForm.role.$error" ng-if="form.userForm.role.$dirty">
+                <div ng-message="required">Required</div>
+              </div>
+            </md-input-container>
+            <md-input-container md-no-float class="md-block">
+              <input ng-model="user.phone" type="text" placeholder="Phone Number">
+            </md-input-container>
+            </form>
+          </md-content>
+      </div>
+    </md-dialog-content>
+    <div class="md-actions" layout="row">
+
+      <md-button class="md-raised md-warn" ng-click="answer('useful')" style="margin-right:20px;" >
+        Done
+      </md-button>
+      <md-button md-no-ink ng-click="answer('not useful')" >
+        Cancel
+      </md-button>
+    </div>
+</md-dialog>

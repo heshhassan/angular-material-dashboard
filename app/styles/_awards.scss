@@ -1,0 +1,95 @@
+.title-icon{
+	display: inline-block;
+    border-bottom: 1px solid #DADADA;
+    margin-bottom: 20px;
+    h3{
+    	margin: 11px 0px 20px 4px;
+    	float: left;
+    	color: $primary-blue;
+    }
+    img{
+    	float: left;
+    }
+}
+.custom-card{
+	margin-top: 40px;
+	margin-bottom: 20px;
+	position: relative;
+	md-card-title{
+		position: absolute;
+		left: 36%;
+	}
+	.title-card-circle{
+		background-color: $primary-orange !important;
+		color: $white;
+		margin: 15px;
+		margin-top: -36px;
+	    width: 70px;
+	    height: 70px;
+	}
+	md-card-content{
+		padding-top: 0;
+		margin-top: 50px;
+	}
+	md-list-item{
+		border-bottom: 1px solid #eee;
+	}
+	.series-num{
+		display: block;
+	    float: left;
+	    position: absolute;
+	    top: 25px;
+	    left: 42%;
+	}
+	.remaining-num{
+		font-size: 41px;
+	    font-weight: 400;
+		color: $primary-blue;
+	}
+
+	p{
+		margin-left: 5px;
+	}
+	.assign-btn{
+		margin: 0;
+	}
+}
+
+// Modal
+.dialogdemoBasicUsage #popupContainer {
+  position: relative; }
+.dialogdemoBasicUsage .debt-be-gone {
+  font-weight: bold;
+  color: blue;
+  text-decoration: underline; }
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px; }
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px; }
+
+.md-datepicker-calendar, .md-datepicker-input-mask-opaque {
+  background: rgb(255, 255, 255);
+}
+
+
+.md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator, .md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator{
+background: rgb(33,150,243);
+color: rgb(255,255,255);
+border-color: transparent;
+}
+
+.md-calendar-date-selection-indicator:hover {
+  background: rgb(224, 224, 224);
+}
+
+.md-calendar-day-header {
+  background: rgb(224, 224, 224);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.md-calendar-date-disabled, .md-calendar-month-label-disabled {
+  color: rgba(0, 0, 0, 0.26);
+}

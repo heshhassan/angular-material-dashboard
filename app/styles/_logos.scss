@@ -1,0 +1,71 @@
+.logo-card{
+	padding: 20px;
+	text-align: center;
+	.img-wrap{
+		border: 1px solid $gray-light;
+    	padding: 15px;
+		position: relative;
+		overflow: hidden;
+		img{
+			max-width: 100%;
+		}	
+	}
+	.edit-logo{
+		position: absolute;
+		background: rgba(0, 0, 0, 0.49);
+		bottom: -1000px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		-webkit-transition: all 0.3s ease-in-out; 
+		-moz-transition: all 0.3s ease-in-out; 
+		transition: all 0.3s ease-in-out;
+		button{
+			width: 24px;
+			*{
+				color: $white;
+			}
+		} 
+	}
+	.logo-name{
+		font-weight: normal;
+		margin-bottom: 0;
+		margin-top: 10px;
+	}
+	&:hover{
+		.edit-logo{
+			bottom: 0;
+		}
+
+	}
+}
+.upload-logo{
+	.uploader{
+		background: gray;
+	  border: 3px dashed $gray;
+	  background-color: $gray-light;
+	  position: relative;
+	  &:hover{
+	  	.md-button{
+	  		transform:scale(1.3,1.3);
+	  	}
+	  }
+	}
+	#uploadLogo{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 99;
+		cursor: pointer;
+	}
+	.md-button.upload-file-btn{
+		transition:all 0.2s ease-in-out;
+		color: $gray;
+		font-weight: normal;
+		font-size: 74px;
+		padding: 42px;
+	}
+}

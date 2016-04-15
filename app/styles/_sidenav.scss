@@ -1,0 +1,50 @@
+.md-sidenav-left{
+	background-color: $primary-blue;
+	.icon-ddl-p{
+		margin-left: 0px;
+		margin-right: 20px;
+		margin-top: -7px;
+	}
+	.icon-ddl{
+		margin-left: 10px;
+		margin-right: 20px;
+	}
+	.layout-padding{
+		background-color: transparent;
+	}
+
+	*{
+		color: $white;
+		background-color: transparent;
+		font-weight: normal;
+
+	}
+	
+	md-whiteframe {
+	  background: #fff;
+	}
+
+	#content {
+	  padding: 24px;
+	}
+	md-content{
+		background-color: transparent;
+	}
+	button{
+		&:hover{
+			background-color: lighten($primary-blue,0.9) !important;
+		}
+	}
+	.admin-info{
+		text-align: center;
+		border-top: 1px solid $gray-light;
+		padding-top: 26px;
+		h3,h5{
+			margin: 5px 0;
+		}
+		img{
+			width: 137px;
+			border-radius: 50%;
+		}
+	}
+}
