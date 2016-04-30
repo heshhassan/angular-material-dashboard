@@ -1,6 +1,7 @@
 node_modules/
 app/bower_components
 .sass-cache
+.tmp
 bower_components/
 app/styles/*.map
 app/styles/*.css
