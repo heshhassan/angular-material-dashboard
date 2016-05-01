@@ -20,98 +20,16 @@
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-  <md-toolbar  class="header" layout="row">
-      <div class="md-toolbar-tools" flex="75">
-        <md-button ng-click="toggleLeft('left')" hide-gt-sm class="md-icon-button">
-         <md-icon md-menu-origin  class="md-icon-button">{{'menu'}}</md-icon>
-        </md-button>
-        <h1 class="logo-txt">Dashboard Demo</h1>
-      </div>
-      <div flex="5" class="md-menu-demo" ng-controller="notificationDllCtrl as ctrl">
-        <div class="menu-demo-container" layout-align="center center" layout="column">
-          <md-menu>
-            <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
-              <span class="notification-num">3</span>
-              <md-icon md-menu-origin  class="md-icon-button">{{'notifications'}}</md-icon>
-            </md-button>
-            <md-menu-content width="4">
-              <md-menu-item ng-repeat="item in [1, 2, 3]">
-                <md-button ng-click="ctrl.announceClick($index)">
-                  <md-icon md-menu-align-target>{{'notifications'}}</md-icon>
-                  Notifications {{item}}
-                </md-button>
-              </md-menu-item>
-            </md-menu-content>
-          </md-menu>
-        </div>
-      </div>
-      <md-list >
-        <md-list-item ng-class="md-3-line" layout="row">
-          <img flex src="images/user.jpg" class="md-avatar" alt=""> 
-          <div class="md-list-item-text" layout="column">
-            <h5 class="user-name">Hesham Khaled</h5>
-          </div>
-          <div flex class="md-menu-demo" ng-controller="userDllCtrl as ctrl" ng-cloak>
-            <div class="menu-demo-container" layout-align="center center" layout="column">
-              <md-menu>
-                <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
-                  <md-icon md-menu-origin  class="md-icon-button">{{'arrow_drop_down'}}</md-icon>
-                </md-button>
-                <md-menu-content width="4">
-                  <md-menu-item ng-repeat="item in [1, 2, 3]">
-                    <md-button ng-click="ctrl.announceClick($index)">
-                      <md-icon md-menu-align-target md-svg-icon="call:no-sim"></md-icon>
-                      Option {{item}}
-                    </md-button>
-                  </md-menu-item>
-                </md-menu-content>
-              </md-menu>
-            </div>
-          </div>
-        </md-list-item>
-      </md-list>
-  </md-toolbar>
-  <div layout="row"  class="dashboard-wrapper">
-    <md-sidenav flex  class="md-sidenav-left md-whiteframe-z2"  md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+  
+  <div layout="row"  ng-include="'views/header.html'"></div>
 
-        <md-content layout-padding="" ng-controller="LeftCtrl">
-          <md-button ng-click="close()" class="md-primary" hide-gt-md="">
-            Tablet-mobile view
-          </md-button>
-          <md-content ng-controller="SideNav" role="navigation" >
-             <md-list ng-repeat="section in data.sidenav.sections">
-              <md-list-item ng-click="section.expand = !section.expand">
-                <a href="{{section.url}}" layout="row"  layout-align="left start">
-                  <md-icon class="icon-ddl-p" ><img src="images/icons/sidenav/{{section.icon}}.png" alt=""></md-icon>
-                  <p class="md-subheader">{{section.name}}</p>
-                </a>
-                 <span flex></span>
-                 <md-icon class=" md-icon-button" ng-show="section.parent">{{section.expand ? 'arrow_drop_up' : 'arrow_drop_down'}}</md-icon>
-              </md-list-item>
-              <md-list-item ng-show="section.expand" ng-repeat="action in section.actions" ng-click="toast(action.link)">
-                  <a href="{{action.url}}" layout="row"  layout-align="left start">
-                   <md-icon class="icon-ddl" ><img src="images/icons/sidenav/{{action.icon}}.png" alt=""></md-icon>
-                   <p class="md-subheader">{{action.name}}</p>
-                   <!-- <md-icon>chevron_right</md-icon> -->
-                 </a>
-              </md-list-item>
-          </md-content>
-          <div class="admin-info" layout="column" layout-align="center center">
-            <div flex><img class="circle" src="images/admin.jpg" alt=""></div>
-            <div flex>
-              <h3>John Doe</h3>
-              <h5>Adminstrator</h5>
-              <h5>john@example.com</h5>
-              <h5>Tel: +20 333-555-888</h5>
-            </div>
-          </div>
-        </md-content>
-    </md-sidenav>
-   <div layout="column" flex id="content">
-       <md-content  layout="column" flex class="md-padding ng-view-wrapper">
-          <div ng-view="" ></div>
-       </md-content>
-   </div>
+  <div layout="row"  class="dashboard-wrapper">
+  
+    <div layout="row"  ng-include="'views/sidenav.html'"></div>
+    <md-content  layout="column" flex class="md-padding ng-view-wrapper">
+      <div ng-view="" ></div>
+    </md-content>
+
   </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

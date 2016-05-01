@@ -1,0 +1,35 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2"  md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+
+    <md-content layout-padding="" ng-controller="LeftCtrl">
+      <md-button ng-click="close()" class="md-primary" hide-gt-md="">
+        Tablet-mobile view
+      </md-button>
+      <md-content ng-controller="SideNav" role="navigation" >
+         <md-list ng-repeat="section in data.sidenav.sections">
+          <md-list-item ng-click="section.expand = !section.expand">
+            <a href="{{section.url}}" layout="row"  layout-align="left start">
+              <md-icon class="icon-ddl-p" ><img src="images/icons/sidenav/{{section.icon}}.png" alt=""></md-icon>
+              <p class="md-subheader">{{section.name}}</p>
+            </a>
+             <span flex></span>
+             <md-icon class=" md-icon-button" ng-show="section.parent">{{section.expand ? 'arrow_drop_up' : 'arrow_drop_down'}}</md-icon>
+          </md-list-item>
+          <md-list-item ng-show="section.expand" ng-repeat="action in section.actions" ng-click="toast(action.link)">
+              <a href="{{action.url}}" layout="row"  layout-align="left start">
+               <md-icon class="icon-ddl" ><img src="images/icons/sidenav/{{action.icon}}.png" alt=""></md-icon>
+               <p class="md-subheader">{{action.name}}</p>
+               <!-- <md-icon>chevron_right</md-icon> -->
+             </a>
+          </md-list-item>
+      </md-content>
+      <div class="admin-info" layout="column" layout-align="center center">
+        <div flex><img class="circle" src="images/admin.jpg" alt=""></div>
+        <div flex>
+          <h3>John Doe</h3>
+          <h5>Adminstrator</h5>
+          <h5>john@example.com</h5>
+          <h5>Tel: +20 333-555-888</h5>
+        </div>
+      </div>
+    </md-content>
+</md-sidenav>

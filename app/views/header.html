@@ -1,0 +1,51 @@
+<md-toolbar  class="header" layout="row">
+      <div class="md-toolbar-tools" flex="75">
+        <md-button ng-click="toggleLeft('left')" hide-gt-sm class="md-icon-button">
+         <md-icon md-menu-origin  class="md-icon-button">{{'menu'}}</md-icon>
+        </md-button>
+        <h1 class="logo-txt">Dashboard Demo</h1>
+      </div>
+      <div flex="5" class="md-menu-demo" ng-controller="notificationDllCtrl as ctrl">
+        <div class="menu-demo-container" layout-align="center center" layout="column">
+          <md-menu>
+            <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+              <span class="notification-num">3</span>
+              <md-icon md-menu-origin  class="md-icon-button">{{'notifications'}}</md-icon>
+            </md-button>
+            <md-menu-content width="4">
+              <md-menu-item ng-repeat="item in [1, 2, 3]">
+                <md-button ng-click="ctrl.announceClick($index)">
+                  <md-icon md-menu-align-target>{{'notifications'}}</md-icon>
+                  Notifications {{item}}
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </div>
+      </div>
+      <md-list >
+        <md-list-item ng-class="md-3-line" layout="row">
+          <img flex src="images/user.jpg" class="md-avatar" alt=""> 
+          <div class="md-list-item-text" layout="column">
+            <h5 class="user-name">Hesham Khaled</h5>
+          </div>
+          <div flex class="md-menu-demo" ng-controller="userDllCtrl as ctrl" ng-cloak>
+            <div class="menu-demo-container" layout-align="center center" layout="column">
+              <md-menu>
+                <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                  <md-icon md-menu-origin  class="md-icon-button">{{'arrow_drop_down'}}</md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                  <md-menu-item ng-repeat="item in [1, 2, 3]">
+                    <md-button ng-click="ctrl.announceClick($index)">
+                      <md-icon md-menu-align-target md-svg-icon="call:no-sim"></md-icon>
+                      Option {{item}}
+                    </md-button>
+                  </md-menu-item>
+                </md-menu-content>
+              </md-menu>
+            </div>
+          </div>
+        </md-list-item>
+      </md-list>
+  </md-toolbar>
