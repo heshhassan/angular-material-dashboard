@@ -14,22 +14,16 @@
 .custom-card{
 	margin-top: 40px;
 	margin-bottom: 20px;
-	position: relative;
-	md-card-title{
-		position: absolute;
-		left: 36%;
-	}
 	.title-card-circle{
 		background-color: $primary-orange !important;
 		color: $white;
-		margin: 15px;
+		margin: -36px auto 0 auto;
 		margin-top: -36px;
 	    width: 70px;
 	    height: 70px;
 	}
 	md-card-content{
 		padding-top: 0;
-		margin-top: 50px;
 	}
 	md-list-item{
 		border-bottom: 1px solid #eee;

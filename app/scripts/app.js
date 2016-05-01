@@ -24,9 +24,9 @@ angular
   .config(['$routeProvider',function ($routeProvider) {
     $routeProvider
       .when('/awards', {
-        templateUrl: 'views/demo1.html',
-        controller: 'AppCtrl',
-        controllerAs: 'App'
+        templateUrl: 'views/awards.html',
+        controller: 'AwardsCtrl',
+        controllerAs: 'Awards'
       })
       .when('/approval', {
         templateUrl: 'views/approval.html',
@@ -49,9 +49,9 @@ angular
         controllerAs: 'Extras'
       })
       .when('/', {
-        templateUrl: 'views/demo1.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'Login'
+        templateUrl: 'views/awards.html',
+        controller: 'AwardsCtrl',
+        controllerAs: 'Awards'
       })
       .otherwise({
         redirectTo: '/'

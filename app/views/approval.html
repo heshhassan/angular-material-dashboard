@@ -1,33 +1,25 @@
 <section layout="row">
-  <md-content layout="row" layout-wrap layout-align="center start" layout-xs="column"layout-padding="" ng-controller="ApprovalCtrl">
-    <div flex="30"  layout="column" ng-repeat="app in approvals">
-      <md-card class="custom-card" >
-        <md-card-title>
-          <md-card-title-text layout="column" layout-align="center center">
-            <md-button class="title-card-circle md-fab md-hue-2" aria-label="Profile">
-                <img src={{app.photo}} alt="">
-            </md-button>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-          <div class="md-actions" layout="column" layout-align="center center" >
-            	<h2 class="approval-num">{{app.number}}</h2>
-            	<h4 class="approval-title">{{app.name}}</h4>
-              <md-button class="md-raised md-warn" ng-click="modalApproval($index)">View</md-button>
-            	
-          </div>
-        </md-card-content>  
-      </md-card>
-    </div>
-        
-    <div layout="column" layout-fill="" layout-align="top center">
-      <div layout="row">
+  <md-content flex="" layout-padding="" ng-controller="ApprovalCtrl">
+    <div class="" layout="row" layout-wrap layout-align="left start" layout-xs="column">
+      <div flex="33" flex-sm="100" flex-xs="100" layout="column" ng-repeat="app in approvals">
+        <md-card class="custom-card" >
+          <md-card-title>
+            <md-card-title-text layout="column" layout-align="center center">
+              <md-button class="title-card-circle md-fab md-hue-2" aria-label="Profile">
+                  <img src={{app.photo}} alt="">
+              </md-button>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <div class="md-actions" layout="column" layout-align="center center" >
+              	<h2 class="approval-num">{{app.number}}</h2>
+              	<h4 class="approval-title">{{app.name}}</h4>
+                <md-button class="md-raised md-warn" ng-click="modalApproval($index)">View</md-button>
+            </div>
+          </md-card-content>  
+        </md-card>
       </div>
-
     </div>
-
-    <div flex=""></div>
-
   </md-content>
 
 </section>

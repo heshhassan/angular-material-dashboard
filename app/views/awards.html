@@ -11,7 +11,7 @@
       <div class="" layout="row" layout-wrap layout-align="left start" layout-xs="column">
         <div ng-repeat="style in award_type.style_list" flex="33" flex-sm="100" flex-xs="100" layout="column">
           <md-card class="custom-card">
-            <md-card-title>
+            <md-card-title layout="column" layout-align="center center">
               <md-card-title-text>
                 <md-button class="title-card-circle md-fab md-hue-2" aria-label="Profile">
                   <span>{{style}}</span>
@@ -30,7 +30,7 @@
                 <img src="images/icons/edit.png" alt="">
 
                 <p>award 1 due 12/15/15</p>
-                <md-button class="assign-btn" ng-click="">Assign</md-button>
+                <md-button class="assign-btn" ng-click="showAdvanced($event)">Assign</md-button>
                 <md-divider md-inset ng-if="!$last"></md-divider>
               </md-list-item>
 

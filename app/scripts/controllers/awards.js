@@ -1,5 +1,5 @@
 angular.module('frontEndApp')
-.controller('AppCtrl', function($scope, $mdDialog) {
+.controller('AwardsCtrl', function($scope, $mdDialog) {
   $scope.status = '  ';
 
   $scope.showAdvanced = function(ev) {

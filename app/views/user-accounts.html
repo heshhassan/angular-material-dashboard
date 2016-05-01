@@ -1,40 +1,43 @@
-    <md-content ng-controller="userAccountsCtrl" layout="row" layout-wrap layout-align="left start" layout-xs="column">
-    		<md-card flex="95">
-					<md-toolbar class="user-table-header">
-				    <div class="md-toolbar-tools">
-				      <h2 class="md-flex">User's accounts</h2>
-				    </div>
-				    <div class="main-fab">
-		          <md-button class="md-fab md-accent" ng-click="showNewUserModal($event)">+</md-button>
-		        </div>
-				  </md-toolbar>
+<section layout="row">
+	<md-content ng-controller="userAccountsCtrl" layout="row" layout-wrap layout-align="center start" layout-xs="column" style="width: 100%">
+		<md-card flex="95">
+			<md-toolbar class="user-table-header">
+				<div class="md-toolbar-tools">
+					<h2 class="md-flex">User's accounts</h2>
+				</div>
+				<div class="main-fab">
+					<md-button class="md-fab md-accent" ng-click="showNewUserModal($event)">+</md-button>
+				</div>
+			</md-toolbar>
+			<md-card-content>
+				<md-table headers="headers" content="content" sortable="sortable" filters="search" custom-class="custom" thumbs="thumbs" count="count">
+				</md-table>
+				<!-- md-table template-->
+				<div id="md-table-template" ng-hide="true">
+					<table md-colresize="md-colresize" class="md-table">
+						<thead>
+							<tr class="md-table-headers-row">
+								<th  class="md-table-header">Edit</th>
+								<th ng-repeat="h in headers" class="md-table-header"><a href="#" ng-if="handleSort(h.field)" ng-click="reverse=!reverse;order(h.field,reverse)">{{h.name}} <i ng-show="reverse &amp;&amp; h.field == predicate" class="ion-android-arrow-dropup"></i><i ng-show="!reverse &amp;&amp; h.field == predicate" class="ion-android-arrow-dropdown"></i></a><span ng-if="!handleSort(h.field)">{{h.name}}</span></th>
+								<th class="md-table-header"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="c in content | filter:filters | startFrom:tablePage*count | limitTo: count" class="md-table-content-row">
+								<td><md-icon md-menu-origin  class="md-icon-button" ng-click="deleteUser(c);">{{'delete'}}</md-icon></td>
+								<td>
+									<div ng-repeat="h in headers" ng-if="h.field == thumbs" class="md-table-thumbs">
+										<div style="background-image:url({{c.thumb}})"></div>
+									</div>
+								</td>
+								<td ng-repeat="h in headers" ng-class="customClass[h.field]" ng-if="h.field != thumbs" class="md-table-content">{{(h.field.indexOf('date') > 0) ? $filter('date')(c[h.field]) : c[h.field];}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</md-card-content>
+		</md-card>
+	</md-content>
+</md-card>
 
-		      <md-table headers="headers" content="content" sortable="sortable" filters="search" custom-class="custom" thumbs="thumbs" count="count">
-		      </md-table>
-		    	</md-content>
-					<!-- md-table template-->
-					<div id="md-table-template" ng-hide="true">
-					  <table md-colresize="md-colresize" class="md-table">
-					    <thead>
-					      <tr class="md-table-headers-row">
-                  <th  class="md-table-header">Edit</th>
-					        <th ng-repeat="h in headers" class="md-table-header"><a href="#" ng-if="handleSort(h.field)" ng-click="reverse=!reverse;order(h.field,reverse)">{{h.name}} <i ng-show="reverse &amp;&amp; h.field == predicate" class="ion-android-arrow-dropup"></i><i ng-show="!reverse &amp;&amp; h.field == predicate" class="ion-android-arrow-dropdown"></i></a><span ng-if="!handleSort(h.field)">{{h.name}}</span></th>
-					        <th class="md-table-header"></th>
-					      </tr>
-					    </thead>
-					    <tbody>
-					      <tr ng-repeat="c in content | filter:filters | startFrom:tablePage*count | limitTo: count" class="md-table-content-row">
-                  <td><md-icon md-menu-origin  class="md-icon-button" ng-click="deleteUser(c);">{{'delete'}}</md-icon></td>
-					        <td>
-					          <div ng-repeat="h in headers" ng-if="h.field == thumbs" class="md-table-thumbs">
-					            <div style="background-image:url({{c.thumb}})"></div>
-					          </div>
-					        </td>
-					        <td ng-repeat="h in headers" ng-class="customClass[h.field]" ng-if="h.field != thumbs" class="md-table-content">{{(h.field.indexOf('date') > 0) ? $filter('date')(c[h.field]) : c[h.field];}}</td>
-
-					    </tbody>
-					  </table>
-            </div>
-
-				</md-card>
-		</md-content>
+</section>

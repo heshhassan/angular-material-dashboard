@@ -1,6 +1,6 @@
 .md-sidenav-left{
 	background-color: $primary-blue;
-	.icon-ddl-p{
+	.icon-ddl-p, .icon-ddl{
 		margin-left: 0px;
 		margin-right: 20px;
 		margin-top: -7px;
@@ -16,10 +16,22 @@
 	*{
 		color: $white;
 		background-color: transparent;
-		font-weight: normal;
 
 	}
-	
+	button {
+
+		a{
+			display: inline-block;
+	    	width: 100%;
+	    	.icon-ddl-p, .icon-ddl{
+	    		float: left;
+	    	}
+		}
+	}
+	.md-subheader{
+	    font-size: 16px;
+    	font-weight: 300;
+	}
 	md-whiteframe {
 	  background: #fff;
 	}
@@ -37,13 +49,14 @@
 	}
 	.admin-info{
 		text-align: center;
-		border-top: 1px solid $gray-light;
+		border-top: 1px solid #6F7982;
 		padding-top: 26px;
 		h3,h5{
 			margin: 5px 0;
+			font-weight: 300;
 		}
 		img{
-			width: 137px;
+			width: 98px;
 			border-radius: 50%;
 		}
 	}

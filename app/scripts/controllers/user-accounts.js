@@ -34,11 +34,6 @@ angular.module('frontEndApp')
       role: 'Sponsor',
       last_modified: 'Jun 5, 2014'
     },{
-      thumb:'http://25.media.tumblr.com/61ebf04c3cc7a84944aa0246e902f2a7/tumblr_mm35b87dGz1qmwrnuo1_1280.jpg',
-      name: 'Daft Punk',
-      role: 'Admin',
-      last_modified: 'Jun 5, 2014'
-    },{
       thumb:'http://thatgrapejuice.net/wp-content/uploads/2014/03/lady-gaga-that-grape-juice-televisionjpg.jpg',
       name: 'Lady Gaga',
       role: 'User',
