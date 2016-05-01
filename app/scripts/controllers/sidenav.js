@@ -40,31 +40,6 @@ angular.module('frontEndApp').controller('SideNav', function($scope, $mdSidenav,
     else list.push(item);
   };
   $scope.data = {
-    toolbar: {
-      buttons: [{
-        name: 'Button 1',
-        icon: 'add',
-        link: 'Button 1'
-      }],
-      menus: [{
-        name: 'Menu 1',
-        icon: 'message',
-        width: '4',
-        actions: [{
-          name: 'Action 1',
-          completed: true,
-          error: true
-        }, {
-          name: 'Action 2',
-          completed: false,
-          error: false
-        }, {
-          name: 'Action 3',
-          completed: true,
-          error: true
-        }]
-      }]
-    },
     sidenav: {
       sections: [{
         name: 'Awards',
@@ -72,6 +47,12 @@ angular.module('frontEndApp').controller('SideNav', function($scope, $mdSidenav,
         expand: false,
         parent: false,
         url:'/#/awards'
+      },{
+        name: 'Websocket Demo',
+        icon: 'websocket',
+        expand: false,
+        parent: false,
+        url:'/#/websocket'
       },{
         name: 'Approval requests',
         icon: 'approval',
