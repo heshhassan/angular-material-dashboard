@@ -1,0 +1,33 @@
+<section layout="row">
+  <md-content flex="" layout-padding="" ng-controller="websocketCtrl">
+    <div class="" layout="row" layout-wrap layout-align="left start" layout-xs="column">
+      <div flex="100" flex-sm="100" flex-xs="100" layout="column">
+        <md-card class="custom-card" >
+          <md-card-title>
+            <md-card-title-text layout="column" layout-align="center center">
+              
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <div class="md-actions" layout="column" layout-align="center center" >
+                  <h1>WebSocket Demo</h1>
+                  <div id="status">Connecting...</div>
+                  <ul id="messages"></ul>
+                  <form id="message-form" action="#" method="post">
+                    <md-input-container class="md-block">
+                      <label>Message</label>
+                      <textarea id="message" placeholder="Write your message here..." required md-select-on-focus></textarea>
+                      </md-input-container>
+                    <md-button type="submit" class="md-raised md-warn" style="margin-right:20px;" >
+                      Send Message
+                    </md-button>
+                    <md-button  md-no-ink  id="close">Close Connection</md-button>
+                  </form>
+            </div>
+          </md-card-content>  
+        </md-card>
+      </div>
+    </div>
+  </md-content>
+
+</section>

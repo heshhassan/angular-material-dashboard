@@ -28,6 +28,11 @@ angular
         controller: 'AwardsCtrl',
         controllerAs: 'Awards'
       })
+      .when('/websocket', {
+        templateUrl: 'views/websocket.html',
+        controller: 'websocketCtrl',
+        controllerAs: 'websocket'
+      })
       .when('/approval', {
         templateUrl: 'views/approval.html',
         controller: 'ApprovalCtrl',
